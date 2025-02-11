@@ -11,10 +11,14 @@
   gap: var(--mantine-spacing-xs);
 }
 
+.logoIcon {
+  color: #1c64f2;
+}
+
 .logoText {
   font-size: var(--mantine-font-size-xl);
   font-weight: 700;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: #1c64f2;
 }
 
 .link {
@@ -23,5 +27,25 @@
 
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.menuTarget {
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  border-radius: var(--mantine-radius-sm);
+  transition: background-color 150ms ease;
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+}
+
+.registerButton {
+  background-color: #1c64f2;
+  color: white;
+
+  &:hover {
+    background-color: #1755cc;
   }
 }
