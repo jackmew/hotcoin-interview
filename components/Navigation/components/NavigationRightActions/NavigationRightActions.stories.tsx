@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { useMantineColorScheme } from '@mantine/core';
+import { MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { NavigationRightActions } from './NavigationRightActions';
 
 const meta = {
@@ -10,17 +10,25 @@ const meta = {
     layout: 'fullscreen',
   },
   decorators: [
-    (Story) => {
-      const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-      const isDark = colorScheme === 'dark';
-      useEffect(() => {
-        console.log('colorScheme', colorScheme);
-      }, [colorScheme]);
-      return <Story toggleColorScheme={toggleColorScheme} isDark={isDark} />;
-    },
+    () => (
+      <MantineProvider>
+        <StoryWithColorScheme />
+      </MantineProvider>
+    ),
   ],
-  // tags: ['autodocs'],
 } satisfies Meta<typeof NavigationRightActions>;
+
+// Separate component to use the hook inside MantineProvider
+function StoryWithColorScheme() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const isDark = colorScheme === 'dark';
+
+  useEffect(() => {
+    console.log('colorScheme', colorScheme);
+  }, [colorScheme]);
+
+  return <NavigationRightActions toggleColorScheme={toggleColorScheme} isDark={isDark} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof meta>;
