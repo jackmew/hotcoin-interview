@@ -77,7 +77,7 @@ export function Navigation() {
           onClick={() => onDropdownChange(name, activeDropdown === name)}
         >
           <Group gap={4}>
-            <Text>{label}</Text>
+            <Text c={activeDropdown === name ? 'primary' : 'inherit'}>{label}</Text>
             <IconChevronDown
               size={16}
               className={`${classes.chevronIcon} ${

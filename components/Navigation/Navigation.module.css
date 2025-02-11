@@ -88,9 +88,11 @@
 
 .chevronIcon.chevronIconRotated {
   animation: rotate-to-up 300ms ease forwards;
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
 }
 
 .chevronIcon.chevronIconRotatedDown {
   animation: rotate-to-down 300ms ease forwards;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 }
 /* End of Animation - IconChevronDown - rotate to up and down */
