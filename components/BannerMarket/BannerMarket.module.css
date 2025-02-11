@@ -1,0 +1,34 @@
+.banner {
+  width: 100%;
+  height: 100px;
+  background: var(--mantine-color-dark-9);
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.hotcoin.com/static/img/top-w.bc10c90.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: var(--mantine-color-white);
+  font-size: rem(32px);
+  font-weight: 500;
+}
