@@ -1,3 +1,5 @@
-export default function WealthManagementPage() {
-  return <div>Wealth Management</div>;
+import { WealthManagementPage } from '@components/Pages/WealthManagementPage/WealthManagementPage';
+
+export default function Page() {
+  return <WealthManagementPage />;
 }

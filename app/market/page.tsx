@@ -1,3 +1,5 @@
-export default function MarketPage() {
-  return <div>Market</div>;
+import { MarketPage } from '@components/Pages/MarketPage/MarketPage';
+
+export default function Page() {
+  return <MarketPage />;
 }
