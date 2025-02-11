@@ -19,6 +19,32 @@ export const theme = createTheme({
     ],
   },
 
+  components: {
+    ActionIcon: {
+      defaultProps: {
+        color: 'gray', // This will override the primary color default
+        variant: 'subtle',
+      },
+      styles: {
+        root: {
+          // This ensures the icon color follows the text color in both light and dark modes
+          color: 'var(--mantine-color-text)',
+        },
+      },
+    },
+    Button: {
+      defaultProps: {
+        color: 'gray',
+        variant: 'subtle',
+      },
+      styles: {
+        root: {
+          color: 'var(--mantine-color-text)',
+        },
+      },
+    },
+  },
+
   // Dark mode specific customizations
   other: {
     logoTextColor: {

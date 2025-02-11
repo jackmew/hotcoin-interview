@@ -114,7 +114,7 @@ export function Navigation() {
             </Link>
 
             {/* Navigation Links */}
-            <Group ml="xl" gap="xl">
+            <Group ml="xl">
               <NavDropdown
                 label="买币"
                 name="buy"
@@ -215,9 +215,14 @@ export function Navigation() {
             </Group>
           </Group>
 
-          <Group>
+          <Group justify="flex-end">
             {/* Search */}
-            <ActionIcon variant="subtle" size="lg" aria-label="Search">
+            <ActionIcon
+              variant="subtle"
+              size="lg"
+              aria-label="Search"
+              className={classes.defaultColor}
+            >
               <IconSearch size="1.2rem" stroke={1.5} />
             </ActionIcon>
 
