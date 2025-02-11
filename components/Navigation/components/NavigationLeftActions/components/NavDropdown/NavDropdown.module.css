@@ -1,0 +1,54 @@
+.menuTarget {
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  border-radius: var(--mantine-radius-sm);
+  transition: background-color 150ms ease;
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+}
+
+/* Chevron animation */
+@keyframes rotate-to-up {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-to-down {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.chevronIcon {
+  transform: rotate(0deg);
+}
+
+.chevronIcon.chevronIconRotated {
+  animation: rotate-to-up 300ms ease forwards;
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
+}
+
+.chevronIcon.chevronIconRotatedDown {
+  animation: rotate-to-down 300ms ease forwards;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+/* End of Animation - IconChevronDown - rotate to up and down */

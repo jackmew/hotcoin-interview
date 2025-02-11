@@ -12,7 +12,17 @@ import {
   IconWallet,
 } from '@tabler/icons-react';
 
-export const navigationItems = [
+export interface INavigationItem {
+  label: string;
+  name: string;
+  items: Array<{
+    href: string;
+    label: string;
+    icon: React.ReactNode;
+  }>;
+}
+
+export const navigationItems: INavigationItem[] = [
   {
     label: '买币',
     name: 'buy',

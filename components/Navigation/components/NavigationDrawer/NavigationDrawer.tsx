@@ -10,23 +10,14 @@ import {
   Text,
   useMantineColorScheme,
 } from '@mantine/core';
+import { INavigationItem } from '../../navigation.const';
 import { NavigationDrawerNavDropdown } from '../NavigationDrawerNavDropdown/NavigationDrawerNavDropdown';
 import classes from './NavigationDrawer.module.css';
-
-interface NavigationItem {
-  label: string;
-  name: string;
-  items: Array<{
-    href: string;
-    label: string;
-    icon: React.ReactNode;
-  }>;
-}
 
 interface NavigationDrawerProps {
   opened: boolean;
   onClose: () => void;
-  navigationItems: NavigationItem[];
+  navigationItems: INavigationItem[];
   onThemeToggle: () => void;
 }
 
@@ -38,30 +29,6 @@ export function NavigationDrawer({
 }: NavigationDrawerProps) {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
-
-  // const NavDropdown = ({
-  //   label,
-  //   items,
-  // }: {
-  //   label: string;
-  //   items: Array<{ href: string; label: string; icon: React.ReactNode }>;
-  // }) => {
-  //   return (
-  //     <Stack gap="xs">
-  //       <Text fw={500} className={classes.mobileMenuTitle}>
-  //         {label}
-  //       </Text>
-  //       {items.map((item, index) => (
-  //         <a key={index} href={item.href} className={classes.mobileLink} onClick={onClose}>
-  //           <Group gap="sm">
-  //             {item.icon}
-  //             <Text size="sm">{item.label}</Text>
-  //           </Group>
-  //         </a>
-  //       ))}
-  //     </Stack>
-  //   );
-  // };
 
   return (
     <Drawer
