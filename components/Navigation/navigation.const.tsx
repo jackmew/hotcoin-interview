@@ -73,4 +73,17 @@ export const navigationItems: INavigationItem[] = [
       { href: '/more/about', label: '关于我们', icon: <IconDots size={16} /> },
     ],
   },
+  {
+    label: 'Zest',
+    name: 'zest',
+    items: [
+      { href: '/welcome', label: 'Welcome', icon: <IconHome size={16} /> },
+      { href: '/market', label: 'Market', icon: <IconFileAnalytics size={16} /> },
+      {
+        href: '/wealth-management',
+        label: 'Wealth Management',
+        icon: <IconFileAnalytics size={16} />,
+      },
+    ],
+  },
 ];

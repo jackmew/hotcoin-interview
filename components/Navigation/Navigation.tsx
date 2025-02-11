@@ -15,7 +15,7 @@ export function Navigation() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const [opened, { open: openDrawer, close: closeDrawer }] = useDisclosure(false);
-  const isDesktop = useMediaQuery('(min-width: 48em)');
+  const isDesktop = useMediaQuery('(min-width: 950px)');
 
   useEffect(() => {
     if (isDesktop) {
