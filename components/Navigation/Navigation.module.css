@@ -18,7 +18,7 @@
 .logoText {
   font-size: var(--mantine-font-size-xl);
   font-weight: 700;
-  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4)) !important;
 }
 
 .link {
