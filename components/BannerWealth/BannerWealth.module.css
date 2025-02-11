@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 60px 120px;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0 0 24px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin: 0;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.image {
+  width: 400px;
+  height: 300px;
+  background-image: url('https://www.hotcoin.com/static/img/header-img-01.a3b45c8.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px 60px;
+    min-height: 300px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .image {
+    width: 300px;
+    height: 225px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .content {
+    margin-bottom: 40px;
+  }
+
+  .imageWrapper {
+    justify-content: center;
+  }
+
+  .image {
+    width: 250px;
+    height: 188px;
+  }
+}
