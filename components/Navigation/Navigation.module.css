@@ -3,6 +3,9 @@
   padding: var(--mantine-spacing-md);
   background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
   border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -53,7 +56,50 @@
   }
 }
 
-/* Start ofAnimation - IconChevronDown - rotate to up and down */
+/* Start of Mobile Drawer */
+
+.drawer {
+  .mantine-Drawer-header {
+    margin-bottom: var(--mantine-spacing-md);
+  }
+
+  .mantine-Drawer-content {
+    padding: var(--mantine-spacing-md);
+  }
+}
+
+.mobileLink {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-sm);
+  width: 100%;
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+}
+
+.mobileMenuTitle {
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  margin-bottom: var(--mantine-spacing-xs);
+}
+
+.mobileThemeButton {
+  width: 100%;
+  justify-content: flex-start;
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  height: auto;
+
+  &:hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  }
+}
+
+/* End of Mobile Drawer */
+
+/* Chevron animation */
 @keyframes rotate-to-up {
   0% {
     transform: rotate(0deg);
