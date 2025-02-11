@@ -49,3 +49,45 @@
     background-color: #1755cc;
   }
 }
+
+/* Start ofAnimation - IconChevronDown - rotate to up and down */
+@keyframes rotate-to-up {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-to-down {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.chevronIcon {
+  transform: rotate(0deg);
+}
+
+.chevronIcon.chevronIconRotated {
+  animation: rotate-to-up 300ms ease forwards;
+}
+
+.chevronIcon.chevronIconRotatedDown {
+  animation: rotate-to-down 300ms ease forwards;
+}
+/* End of Animation - IconChevronDown - rotate to up and down */

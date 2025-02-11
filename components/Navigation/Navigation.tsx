@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   IconChartBar,
@@ -37,13 +37,20 @@ export function Navigation() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [closingDropdown, setClosingDropdown] = useState<string | null>(null);
 
-  const handleDropdownOpen = (dropdownName: string) => {
-    setActiveDropdown(dropdownName);
-  };
+  useEffect(() => {
+    console.log(activeDropdown);
+  }, [activeDropdown]);
 
-  const handleDropdownClose = () => {
-    setActiveDropdown(null);
+  const onDropdownChange = (name: string, opened: boolean) => {
+    if (opened) {
+      setActiveDropdown(name);
+      setClosingDropdown(null); // Ensure no dropdown is "closing" when a new one opens
+    } else {
+      setClosingDropdown(name); // Track which dropdown is closing
+      setActiveDropdown(null);
+    }
   };
 
   const NavDropdown = ({
@@ -56,16 +63,29 @@ export function Navigation() {
     items: Array<{ href: string; label: string; icon: React.ReactNode }>;
   }) => (
     <Menu
-      onOpen={() => handleDropdownOpen(name)}
-      onClose={handleDropdownClose}
+      opened={activeDropdown === name}
+      onChange={(opened) => onDropdownChange(name, opened)}
+      trigger="hover"
+      openDelay={100}
+      closeDelay={200}
       shadow="md"
       width={200}
     >
       <Menu.Target>
-        <UnstyledButton className={classes.menuTarget}>
+        <UnstyledButton
+          className={classes.menuTarget}
+          onClick={() => onDropdownChange(name, activeDropdown === name)}
+        >
           <Group gap={4}>
             <Text>{label}</Text>
-            {activeDropdown === name ? <IconChevronUp size={16} /> : <IconChevronDown size={16} />}
+            <IconChevronDown
+              size={16}
+              className={`${classes.chevronIcon} ${
+                activeDropdown === name || closingDropdown === name
+                  ? classes.chevronIconRotated
+                  : ''
+              } ${closingDropdown === name ? classes.chevronIconRotatedDown : ''}`}
+            />
           </Group>
         </UnstyledButton>
       </Menu.Target>
