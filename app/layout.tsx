@@ -1,17 +1,18 @@
 import '@mantine/core/styles.css';
 
 import React from 'react';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+import { Navigation } from '../components/Navigation/Navigation';
+import { Providers } from '../components/Providers/Providers';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Hotcoin Clone',
+  description: 'Hotcoin market and wealth management clone',
 };
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en" {...mantineHtmlProps}>
+    <html lang="zh" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <Providers>
+          <Navigation />
+          {children}
+        </Providers>
       </body>
     </html>
   );
