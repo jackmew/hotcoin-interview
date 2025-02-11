@@ -2,28 +2,18 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import {
-  IconCoin,
-  IconDownload,
-  IconMenu2,
-  IconMoon,
-  IconSearch,
-  IconSun,
-  IconWorld,
-} from '@tabler/icons-react';
-import { ActionIcon, Button, Container, Group, Text, useMantineColorScheme } from '@mantine/core';
+import { IconCoin, IconMenu2 } from '@tabler/icons-react';
+import { ActionIcon, Container, Group, Text, useMantineColorScheme } from '@mantine/core';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { NavigationDrawer } from './components/NavigationDrawer/NavigationDrawer';
 import { NavigationLeftNav } from './components/NavigationLeftNav/NavigationLeftNav';
 import { NavigationRightActions } from './components/NavigationRightActions/NavigationRightActions';
-import { useDropdown } from './hooks/useNavigation';
 import { navigationItems } from './navigation.const';
 import classes from './Navigation.module.css';
 
 export function Navigation() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
-  const { activeDropdown, onDropdownChange } = useDropdown();
   const [opened, { open: openDrawer, close: closeDrawer }] = useDisclosure(false);
   const isDesktop = useMediaQuery('(min-width: 48em)');
 
@@ -54,12 +44,7 @@ export function Navigation() {
           </Link>
 
           {/* Left-side Navigation */}
-          {isDesktop && (
-            <NavigationLeftNav
-              activeDropdown={activeDropdown}
-              onDropdownChange={onDropdownChange}
-            />
-          )}
+          {isDesktop && <NavigationLeftNav />}
 
           {/* Right-side Actions */}
           {isDesktop && (

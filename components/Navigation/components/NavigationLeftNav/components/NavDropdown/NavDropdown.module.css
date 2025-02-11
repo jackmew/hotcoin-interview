@@ -9,46 +9,25 @@
   }
 }
 
-/* Chevron animation */
-@keyframes rotate-to-up {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(90deg);
-  }
-
-  100% {
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes rotate-to-down {
-  0% {
-    transform: rotate(180deg);
-  }
-
-  50% {
-    transform: rotate(90deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 .chevronIcon {
+  transition:
+    transform 300ms ease,
+    color 150ms ease;
   transform: rotate(0deg);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 }
 
-.chevronIcon.chevronIconRotated {
-  animation: rotate-to-up 300ms ease forwards;
+/* When menu is opened - using Mantine's [data-expanded] attribute */
+[data-expanded] .chevronIcon {
+  transform: rotate(180deg);
   color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
 }
 
-.chevronIcon.chevronIconRotatedDown {
-  animation: rotate-to-down 300ms ease forwards;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+.label {
+  transition: color 150ms ease;
+  color: inherit;
 }
-/* End of Animation - IconChevronDown - rotate to up and down */
+
+[data-expanded] .label {
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
+}
