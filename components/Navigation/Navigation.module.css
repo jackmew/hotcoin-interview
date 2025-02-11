@@ -12,13 +12,13 @@
 }
 
 .logoIcon {
-  color: #1c64f2;
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
 }
 
 .logoText {
   font-size: var(--mantine-font-size-xl);
   font-weight: 700;
-  color: #1c64f2;
+  color: light-dark(var(--mantine-color-primary-5), var(--mantine-color-primary-4));
 }
 
 .link {
@@ -42,11 +42,14 @@
 }
 
 .registerButton {
-  background-color: #1c64f2;
-  color: white;
+  background-color: var(--mantine-color-primary-filled) !important;
+  color: var(--mantine-color-white);
 
   &:hover {
-    background-color: #1755cc;
+    background-color: light-dark(
+      var(--mantine-color-primary-6),
+      var(--mantine-color-primary-4)
+    ) !important;
   }
 }
 
