@@ -4,15 +4,10 @@ import { NavDropdown } from './components/NavDropdown/NavDropdown';
 
 interface NavigationLeftNavProps {
   activeDropdown: string | null;
-  closingDropdown: string | null;
   onDropdownChange: (name: string, opened: boolean) => void;
 }
 
-export function NavigationLeftNav({
-  activeDropdown,
-  closingDropdown,
-  onDropdownChange,
-}: NavigationLeftNavProps) {
+export function NavigationLeftNav({ activeDropdown, onDropdownChange }: NavigationLeftNavProps) {
   return (
     <Group gap="sm" wrap="nowrap">
       {navigationItems.map((item) => (
@@ -20,7 +15,6 @@ export function NavigationLeftNav({
           key={item.name}
           {...item}
           activeDropdown={activeDropdown}
-          closingDropdown={closingDropdown}
           onDropdownChange={onDropdownChange}
         />
       ))}

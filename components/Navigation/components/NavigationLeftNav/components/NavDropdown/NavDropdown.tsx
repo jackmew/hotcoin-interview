@@ -8,7 +8,6 @@ interface NavDropdownProps {
   name: string;
   items: Array<{ href: string; label: string; icon: React.ReactNode }>;
   activeDropdown: string | null;
-  closingDropdown: string | null;
   onDropdownChange: (name: string, opened: boolean) => void;
 }
 
@@ -17,7 +16,6 @@ export function NavDropdown({
   name,
   items,
   activeDropdown,
-  closingDropdown,
   onDropdownChange,
 }: NavDropdownProps) {
   return (
@@ -40,10 +38,8 @@ export function NavDropdown({
             <IconChevronDown
               size={16}
               className={`${classes.chevronIcon} ${
-                activeDropdown === name || closingDropdown === name
-                  ? classes.chevronIconRotated
-                  : ''
-              } ${closingDropdown === name ? classes.chevronIconRotatedDown : ''}`}
+                activeDropdown === name ? classes.chevronIconRotated : ''
+              } `}
             />
           </Group>
         </UnstyledButton>

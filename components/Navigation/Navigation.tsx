@@ -23,7 +23,7 @@ import classes from './Navigation.module.css';
 export function Navigation() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
-  const { activeDropdown, closingDropdown, onDropdownChange } = useDropdown();
+  const { activeDropdown, onDropdownChange } = useDropdown();
   const [opened, { open: openDrawer, close: closeDrawer }] = useDisclosure(false);
   const isDesktop = useMediaQuery('(min-width: 48em)');
 
@@ -32,10 +32,6 @@ export function Navigation() {
       closeDrawer();
     }
   }, [isDesktop, closeDrawer]);
-
-  const handleMobileLinkClick = () => {
-    closeDrawer();
-  };
 
   const onDrawerIconClick = () => {
     if (opened) {
@@ -57,11 +53,10 @@ export function Navigation() {
             </Group>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Left-side Navigation */}
           {isDesktop && (
             <NavigationLeftNav
               activeDropdown={activeDropdown}
-              closingDropdown={closingDropdown}
               onDropdownChange={onDropdownChange}
             />
           )}
@@ -70,43 +65,6 @@ export function Navigation() {
           {isDesktop && (
             <NavigationRightActions toggleColorScheme={toggleColorScheme} isDark={isDark} />
           )}
-          {/* <Group gap="xs" wrap="nowrap">
-            {isDesktop && (
-              <>
-                <ActionIcon variant="subtle" size="lg" aria-label="Search">
-                  <IconSearch size="1.2rem" stroke={1.5} />
-                </ActionIcon>
-                <Group gap="xs" wrap="nowrap">
-                  <Button variant="subtle" size="sm">
-                    登录
-                  </Button>
-                  <Button variant="filled" size="sm" className={classes.registerButton}>
-                    注册
-                  </Button>
-                </Group>
-                <Group gap="xs" wrap="nowrap">
-                  <ActionIcon variant="subtle" size="lg" aria-label="Download">
-                    <IconDownload size="1.2rem" stroke={1.5} />
-                  </ActionIcon>
-                  <ActionIcon
-                    variant="subtle"
-                    onClick={() => toggleColorScheme()}
-                    size="lg"
-                    aria-label="Toggle color scheme"
-                  >
-                    {isDark ? (
-                      <IconSun size="1.2rem" stroke={1.5} />
-                    ) : (
-                      <IconMoon size="1.2rem" stroke={1.5} />
-                    )}
-                  </ActionIcon>
-                  <ActionIcon variant="subtle" size="lg" aria-label="Change language">
-                    <IconWorld size="1.2rem" stroke={1.5} />
-                  </ActionIcon>
-                </Group>
-              </>
-            )}
-          </Group> */}
           {!isDesktop && (
             <ActionIcon variant="subtle" size="lg" onClick={onDrawerIconClick}>
               <IconMenu2 size="1.2rem" stroke={1.5} />
