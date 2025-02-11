@@ -14,7 +14,8 @@ import {
 import { ActionIcon, Button, Container, Group, Text, useMantineColorScheme } from '@mantine/core';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { NavigationDrawer } from './components/NavigationDrawer/NavigationDrawer';
-import { NavigationLeftNav } from './components/NavigationLeftActions/NavigationLeftNav';
+import { NavigationLeftNav } from './components/NavigationLeftNav/NavigationLeftNav';
+import { NavigationRightActions } from './components/NavigationRightActions/NavigationRightActions';
 import { useDropdown } from './hooks/useNavigation';
 import { navigationItems } from './navigation.const';
 import classes from './Navigation.module.css';
@@ -66,7 +67,10 @@ export function Navigation() {
           )}
 
           {/* Right-side Actions */}
-          <Group gap="xs" wrap="nowrap">
+          {isDesktop && (
+            <NavigationRightActions toggleColorScheme={toggleColorScheme} isDark={isDark} />
+          )}
+          {/* <Group gap="xs" wrap="nowrap">
             {isDesktop && (
               <>
                 <ActionIcon variant="subtle" size="lg" aria-label="Search">
@@ -102,13 +106,12 @@ export function Navigation() {
                 </Group>
               </>
             )}
-
-            {!isDesktop && (
-              <ActionIcon variant="subtle" size="lg" onClick={onDrawerIconClick}>
-                <IconMenu2 size="1.2rem" stroke={1.5} />
-              </ActionIcon>
-            )}
-          </Group>
+          </Group> */}
+          {!isDesktop && (
+            <ActionIcon variant="subtle" size="lg" onClick={onDrawerIconClick}>
+              <IconMenu2 size="1.2rem" stroke={1.5} />
+            </ActionIcon>
+          )}
         </Group>
       </Container>
 
