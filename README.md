@@ -1,4 +1,22 @@
-# HotCoin interview
+# HotCoin
+
+Deployed - https://hotcoin-interview.vercel.app/
+
+## Storybook
+
+![Storybook Screenshot](screenshots/storybook.png)
+
+## Market
+
+![Market Screenshot](screenshots/market.png)
+
+Please navigate the page with the dropdown of Zest to go to
+
+1. welcome
+2. market
+3. wealthManagement
+
+# HotColin interview
 
 初中级面试题
 https://www.hotcoin.com/zh_CN/market
@@ -21,20 +39,6 @@ html，css基本功。
 代码维护成本
 组件化思维（初级工程师不做要求，中级酌情考察）
 React技术栈使用（初级工程师不做要求，中级酌情考察）
-
-## Storybook
-
-![Storybook Screenshot](screenshots/storybook.png)
-
-## Market
-
-![Market Screenshot](screenshots/market.png)
-
-Please navigate the page with the dropdown of Zest to go to
-
-1. welcome
-2. market
-3. wealthManagement
 
 ## Features
 
