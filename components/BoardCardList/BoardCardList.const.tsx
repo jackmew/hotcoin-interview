@@ -307,3 +307,11 @@ export const turnovers = {
   totalPages: 0,
   time: 1739267803133,
 };
+
+export const boardCardItems = [
+  { title: '熱門榜', data: hotlists.data },
+  { title: '漲幅榜', data: topGainers.data },
+  { title: '跌幅榜', data: topLosers.data },
+  { title: '新幣榜', data: newLists.data },
+  { title: '成交額榜', data: turnovers.data },
+];

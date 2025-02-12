@@ -1,13 +1,17 @@
 'use client';
 
 import { BannerMarket } from '@components/BannerMarket/BannerMarket';
+import { BoardCardList } from '@components/BoardCardList/BoardCardList';
+import { boardCardItems } from '@components/BoardCardList/BoardCardList.const';
 import { Container } from '@mantine/core';
 
 export function MarketPage() {
   return (
     <main>
       <BannerMarket />
-      <Container size="lg">{/* Other market page content */}</Container>
+      <Container size="xl" mt="md">
+        <BoardCardList items={boardCardItems} />
+      </Container>
     </main>
   );
 }
