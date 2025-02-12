@@ -1,0 +1,9 @@
+.scrollContainer {
+  overflow-x: hidden;
+  max-width: calc((360px + var(--mantine-spacing-md)) * 4);
+  margin: 0 var(--mantine-spacing-md);
+}
+
+.cardContainer {
+  width: fit-content;
+}
