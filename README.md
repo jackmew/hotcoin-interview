@@ -16,6 +16,10 @@ Please navigate the page with the dropdown of Zest to go to
 2. market
 3. wealthManagement
 
+## Dark Theme
+
+![Dark Theme Screenshot](screenshots/dark-theme.png)
+
 # HotColin interview
 
 初中级面试题
