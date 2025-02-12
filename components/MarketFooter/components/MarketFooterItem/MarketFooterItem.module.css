@@ -1,0 +1,12 @@
+.item {
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+
+  width: 350px;
+  flex: 0 0 350px;
+
+  border-right: 1px solid light-dark(var(--mantine-color-gray-5), var(--mantine-color-gray-3));
+
+  &:last-child {
+    border-right: none;
+  }
+}
